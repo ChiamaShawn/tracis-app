@@ -4,17 +4,23 @@ import { Nav, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { Subject } from 'rxjs/Subject';
-
+import { LandingPage } from '../pages/landing/landing';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+  card = {
+      imageUrl: 'assets/img/card/card-saopaolo.png',
+      title: 'São Paulo',
+      subtitle: '41 Listings'
+    };
 
-  rootPage: any = 'HomePage';
+  rootPage: any = LandingPage;
   activePage = new Subject();
 
   pages: Array<{ title: string, component: any, active: boolean, icon: string }>;
+  routeList: Array<{ title: string, component: any, active: boolean, icon: string }>;
   rightMenuItems: Array<{ icon: string, active: boolean }>;
   state: any;
   placeholder = 'assets/img/avatar/girl-avatar.png';
@@ -39,6 +45,15 @@ export class MyApp {
       { icon: 'camera', active: false },
       { icon: 'beer', active: false },
       { icon: 'power', active: false },
+    ];
+
+    this.routeList = [
+      { title: 'Home', component: 'MapPage', active: true, icon: 'home' },
+      { title: 'Accordion List', component: 'AccordionListPage', active: false, icon: 'map' },
+      { title: 'Ionic Official Components',
+        component: 'IonicOfficialComponentsPage', active: false, icon: 'ionic' },
+      { title: 'Ionic Native Features', component: 'IonicNativePage', active: false, icon: 'ionic' },
+      { title: 'Login', component: 'LoginListPage', active: false, icon: 'archive' }
     ];
 
     this.pages = [
