@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { AlertController, App, LoadingController, NavController, Slides, IonicPage, NavParams } from 'ionic-angular';
+import { Http } from '@angular/http';
 import { MenuPage } from '../menu/menu';
-
+import { HomePage } from '../home/home'
+import { TabsPage } from '../tabs/tabs';
 /**
  * Generated class for the LandingPage page.
  *
@@ -16,12 +18,16 @@ import { MenuPage } from '../menu/menu';
 })
 export class LandingPage {
   public loginForm: any;
+  register_form = {};
+  next_of_kin_1 = {};
+  next_of_kin_2 = {};
   public backgroundImage = 'assets/img/background/background-6.jpg';
   constructor(
     public loadingCtrl: LoadingController,
     public alertCtrl: AlertController,
     public app: App,
-    private navCtrl: NavController
+    private nav: NavController,
+    private http: Http
   ) { }
   @ViewChild('slider') slider: Slides;
   @ViewChild('innerSlider') innerSlider: Slides;
@@ -31,15 +37,28 @@ export class LandingPage {
   }
   goToLogin() {
     this.slider.slideTo(1);
+    console.log('Go to login clicked');
   }
 
   goToSignup() {
     this.slider.slideTo(2);
   }
-  nextSignUp(){
+  secondSignUp() {
     this.slider.slideTo(3);
   }
-  previousSignUp(){
+  thirdSignUp() {
+    this.slider.slideTo(4);
+  }
+  fourthSignUp() {
+    this.slider.slideTo(5);
+  }
+  lastSignUp() {
+
+  }
+  firstSignUp() {
+    this.slider.slideTo(2);
+  }
+  previousSignUp() {
     this.slider.slideTo(2);
   }
 
@@ -51,9 +70,9 @@ export class LandingPage {
   slidePrevious() {
     this.innerSlider.slidePrev();
   }
-  openMenu(){
-    this.navCtrl.push(MenuPage);
-  }
+  // openMenu(){
+  //   this.navCtrl.push(MenuPage);
+  // }
   presentLoading(message) {
     const loading = this.loadingCtrl.create({
       duration: 500
@@ -84,5 +103,19 @@ export class LandingPage {
     this.presentLoading('An e-mail was sent with your new password.');
   }
 
+  register() {
+
+    this.nav.push(TabsPage);
+    //   console.log(this.register_form);
+    //   console.log(this.next_of_kin_2);
+    //   console.log(this.next_of_kin_1);  
+    //   this.register_form['next_of_kins'] = JSON.stringify([this.next_of_kin_1, this.next_of_kin_2]);
+    //   console.log(this.register_form);
+    //   this.http.post('http://tracis-api.envisagemobile.com/api/oauth/policy/signup', this.register_form).subscribe(response => {
+    //     this.presentLoading('Thanks for signing up!');
+    //     console.log(response);
+    //   })
+    // }
+  }
 
 }

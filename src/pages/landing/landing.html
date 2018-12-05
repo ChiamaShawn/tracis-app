@@ -1,4 +1,4 @@
-<ion-content class="transparent-header" [ngStyle]="{'background-image': 'url(' + backgroundImage +')'}">
+<ion-content class="transparent-header" [ngStyle]="{'background': 'rgba(232,232,232)'}">
   <ion-header>
     <ion-navbar>
     </ion-navbar>
@@ -6,40 +6,27 @@
   <ion-slides #slider class="content-slider" direction="vertical">
     <ion-slide class="swiper-no-swiping">
       <div padding>
-        <img class="logo" src="https://seeklogo.com/images/A/amref-logo-6C00ABD530-seeklogo.com.png" />
-        <ion-slides class="text-slider" autoplay="2000">
-          <ion-slide>
-            <h3> Really nice stuff </h3>
-          </ion-slide>
-          <ion-slide>
-            <img src="assets/img/misc/emoji.png" />
-          </ion-slide>
-          <ion-slide>
-            <h3> Unique experiences given to you for just a couple bucks </h3>
-          </ion-slide>
-          <ion-slide>
-            <h3> Share what you love </h3>
-          </ion-slide>
-        </ion-slides>
+        <img class="logo" style="margin-bottom:60px;"src="https://seeklogo.com/images/A/amref-logo-6C00ABD530-seeklogo.com.png" />
+        
         <ion-row>
-            <ion-col>
-                <button ion-button round color="dark" class="login-button" (click)="goToLogin()">
-                  <h4 style="color:white;padding-top:10px;">
-                      SIGN IN
-                  </h4>
-                  </button>
-              </ion-col>
+          <ion-col>
+            <button ion-button round color="dark" class="login-button" (click)="goToLogin()">
+              <h4 style="color:white;padding-top:10px;">
+                SIGN IN
+              </h4>
+            </button>
+          </ion-col>
         </ion-row>
 
-    
+
         <ion-row>
-          
+
           <ion-col>
             <button ion-button round color="dark" class="login-button" (click)="goToSignup()">
               <h4 style="color:white;padding-top:10px;">
-                  REGISTER
+                REGISTER
               </h4>
-              </button>
+            </button>
           </ion-col>
         </ion-row>
       </div>
@@ -48,6 +35,7 @@
       <ion-slides #innerSlider class="content-slider">
         <ion-slide class="swiper-no-swiping">
           <div style="padding: 20% 32px 32px 32px">
+
             <ion-item>
               <ion-label stacked>Phone Number</ion-label>
               <ion-input type="text"></ion-input>
@@ -55,11 +43,17 @@
             <ion-item>
               <ion-label stacked>Password</ion-label>
               <ion-input type="password"></ion-input>
-            </ion-item> 
-            <button ion-button block round style="margin-top: 16px;" (click)="login()" color="dark" class="login-button"><h4 style="color:white">LOGIN</h4></button>
-            <button ion-button clear (click)="slideNext()" color="light" class="forgot-button">FORGOT PASSWORD?</button>
+            </ion-item>
+
+            <button ion-button block round style="margin-top: 16px;" (click)="login()" color="dark" class="login-button">
+              <h4 style="color:white">LOGIN</h4>
+            </button>
+            <button ion-button clear (click)="slideNext()" color="light" class="forgot-button"><h4 style="color:black;">FORGOT PASSWORD?</h4></button>
           </div>
-          <button ion-button clear (click)="goToSignup()" class="slide-button position-bottom">GO TO SIGNUP<ion-icon name="arrow-down"></ion-icon></button>
+          <button ion-button clear (click)="goToSignup()" class="slide-button position-bottom"><h4 style="color:black">GO TO SIGNUP
+              <ion-icon name="arrow-down"></ion-icon>
+          </h4>            
+          </button>
         </ion-slide>
         <ion-slide class="swiper-no-swiping">
           <div style="padding: 20% 32px 32px 32px">
@@ -68,106 +62,190 @@
               <ion-input type="email"></ion-input>
             </ion-item>
             <button ion-button block round (click)="resetPassword()" color="light" class="login-button">RESET PASSWORD</button>
-            <button ion-button clear (click)="slidePrevious()" color="light" class="goback-button"><ion-icon name="arrow-back"></ion-icon> GO BACK</button>
+            <button ion-button clear (click)="slidePrevious()" color="light" class="goback-button">
+              <ion-icon name="arrow-back"></ion-icon> GO BACK</button>
           </div>
         </ion-slide>
       </ion-slides>
     </ion-slide>
     <ion-slide class="zoom swiper-no-swiping">
       <button ion-button clear (click)="goToLogin()" class="slide-button">
-        GO TO LOGIN
-        <ion-icon name="arrow-up"></ion-icon>
+        <h4 style="color:black">GO TO LOGIN
+          <ion-icon name="arrow-up"></ion-icon></h4>
       </button>
       <div style="padding: 16px">
-        <ion-item>
-          <ion-label stacked>First Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked>Last Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked>Phone Number</ion-label>
-          <ion-input type="tel"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked>Next of Kin Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked>Next of  Kin Phone Number</ion-label>
-          <ion-input type="tel"></ion-input>
-        </ion-item>
-         
+        <form>
           <ion-item>
-            <ion-label stacked>Next Of Kin Relationship</ion-label>
-            <ion-select [(ngModel)]="gender">
-              <ion-option value="f">Parent</ion-option>
-              <ion-option value="m">Child</ion-option>
-              <ion-option value="m">Spouse</ion-option>
-              <ion-option value="m">Sibling</ion-option>
-              <ion-option value="m">Cousin</ion-option>
-              <ion-option value="m">Legal Representative</ion-option>
-            </ion-select>
-
-
+            <ion-label stacked><h4>First Name</h4></ion-label>
+            <ion-input [(ngModel)]="register_form.first_name" name="first_name" type="text"></ion-input>
           </ion-item>
-          
+          <ion-item>
+            <ion-label stacked><h4>Last Name</h4></ion-label>
+            <ion-input [(ngModel)]="register_form.second" name="second_name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h4>Phone Number</h4></ion-label>
+            <ion-input [(ngModel)]="register_form.phone_number" name="phone_number" type="tel"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label stacked><h4>Policy Number</h4></ion-label>
+              <ion-input [(ngModel)]="register_form.policy_number" name="policy_number" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label stacked><h4>Policy Type</h4></ion-label>
+                <ion-input [(ngModel)]="register_form.policy_type" name="policy_type " type="text"></ion-input>
+              </ion-item>
 
-          <button ion-button (click)="nextSignUp()" color="dark" class="right-rnd-btn">
-            <ion-icon name="arrow-forward"></ion-icon>
-          </button>
-        
+        </form>
+
+        <button ion-button (click)="secondSignUp()" color="dark" class="right-rnd-btn">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+
       </div>
     </ion-slide>
     <ion-slide class="zoom swiper-no-swiping">
-      <button ion-button clear (click)="goToLogin()" class="slide-button">
-        GO TO LOGIN
-        <ion-icon name="arrow-up"></ion-icon>
-      </button>
+        <button ion-button clear (click)="goToLogin()" class="slide-button">
+            <h4 style="color:black">GO TO LOGIN
+              <ion-icon name="arrow-up"></ion-icon></h4>
+          </button>
       <div style="padding: 16px">
-        
-          
-        <ion-item>
-          <ion-label stacked>Next of #2 Kin Name</ion-label>
-          <ion-input type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label stacked>Next of Kin #2 Phone Number</ion-label>
-          <ion-input type="tel"></ion-input>
-        </ion-item>
-          
+
+        <form>
           <ion-item>
-            <ion-label stacked>Next Of Kin Relationship</ion-label>
-            <ion-select [(ngModel)]="gender">
-              <ion-option value="f">Parent</ion-option>
-              <ion-option value="m">Child</ion-option>
-              <ion-option value="m">Spouse</ion-option>
-              <ion-option value="m">Sibling</ion-option>
-              <ion-option value="m">Cousin</ion-option>
-              <ion-option value="m">Legal Representative</ion-option>
+            <ion-label stacked><h4>Next of Kin First Name</h4></ion-label>
+            <ion-input [(ngModel)]="next_of_kin_1.first_name" name="next_of_kin_first_name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h4>Next of Kin Second Name</h4></ion-label>
+            <ion-input [(ngModel)]="next_of_kin_1.second_name" name="next_of_kin_second_name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h4>Next of Kin Phone Number</h4></ion-label>
+            <ion-input [(ngModel)]="next_of_kin_1.next_of_kin_phone" name="next_of_kin_phone" type="tel"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h4>Next of Kin Identification Document</h4></ion-label>
+            <ion-input [(ngModel)]="next_of_kin_1.identification_doc_type" name="next_of_kin_second_name" type="text"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h4>Next of Kin Identification Document Number</h4></ion-label>
+            <ion-input [(ngModel)]="next_of_kin_1.identification_doc_number" name="next_of_kin_second_name" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked><h4>Next Of Kin Relationship</h4></ion-label>
+            <ion-select [(ngModel)]="next_of_kin_1.next_of_kin_relationship" name="next_of_kin_relationship">
+              <ion-option value="parent">Parent</ion-option>
+              <ion-option value="child">Child</ion-option>
+              <ion-option value="spouse">Spouse</ion-option>
+              <ion-option value="sibling">Sibling</ion-option>
+              <ion-option value="cousin">Cousin</ion-option>
+              <ion-option value="legal_representative">Legal Representative</ion-option>
             </ion-select>
 
 
           </ion-item>
-          <ion-item>
-            <ion-label stacked>Password</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label stacked>Password Confirmation</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-          <button ion-button block round (click)="openMenu()" color="dark" style="margin-top:8px;" class="login-button"><h4 style="color:white;padding-bottom:4px;">REGISTER</h4></button>
 
-          <button ion-button (click)="previousSignUp()" color="dark" class="left-rnd-btn">
-            <ion-icon name="arrow-back"></ion-icon>
-          </button>
-         
-        
+
+        </form>
+
+        <button ion-button (click)="firstSignUp()" color="dark" class="left-rnd-btn">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+        <button ion-button (click)="thirdSignUp()" color="dark" class="right-rnd-btn">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+
+
       </div>
     </ion-slide>
-    
+    <ion-slide class="zoom swiper-no-swiping">
+        <button ion-button clear (click)="goToLogin()" class="slide-button">
+            <h4 style="color:black">GO TO LOGIN
+              <ion-icon name="arrow-up"></ion-icon></h4>
+          </button>
+      <div style="padding: 16px">
+
+        <form>
+          <ion-item>
+            <ion-label stacked><h4>Next of #2 Kin First Name</h4></ion-label>
+            <ion-input [(ngModel)]="next_of_kin_2.first_name" type="text" name="next_of_kin_2_name"></ion-input>
+          </ion-item>
+
+          <ion-item>
+              <ion-label stacked><h4>Next of #2 Kin Last Name</h4></ion-label>
+              <ion-input [(ngModel)]="next_of_kin_2.second_name" type="text" name="next_of_kin_2_name"></ion-input>
+            </ion-item>
+          <ion-item>
+            <ion-label stacked><h4>Next of Kin #2 Phone Number</h4></ion-label>
+            <ion-input [(ngModel)]="next_of_kin_2.phone_number" type="tel" name="next_of_kin_2_phone_number"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label stacked><h4>Next of Kin Identification Document</h4></ion-label>
+              <ion-input [(ngModel)]="next_of_kin_2.identification_doc_type" name="next_of_kin_second_name" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked><h4>Next of Kin Identification Document Number</h4></ion-label>
+              <ion-input [(ngModel)]="next_of_kin_2.identification_doc_number" name="next_of_kin_second_name" type="text"></ion-input>
+            </ion-item>
+
+          <ion-item>
+            <ion-label stacked><h4>Next Of Kin Relationship</h4></ion-label>
+            <ion-select [(ngModel)]="next_of_kin_2.relationship" name="next_of_kin_2_relationship">
+              <ion-option value="parent">Parent</ion-option>
+              <ion-option value="child">Child</ion-option>
+              <ion-option value="spouse">Spouse</ion-option>
+              <ion-option value="sibling">Sibling</ion-option>
+              <ion-option value="cousin">Cousin</ion-option>
+              <ion-option value="legal_representative">Legal Representative</ion-option>
+            </ion-select>
+          </ion-item>
+        </form>
+
+
+        <button ion-button (click)="secondSignUp()" color="dark" class="left-rnd-btn">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+        <button ion-button (click)="fourthSignUp()" color="dark" class="right-rnd-btn">
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+
+
+      </div>
+    </ion-slide>
+    <ion-slide class="zoom swiper-no-swiping">
+        <button ion-button clear (click)="goToLogin()" class="slide-button">
+            <h4 style="color:black">GO TO LOGIN
+              <ion-icon name="arrow-up"></ion-icon></h4>
+          </button>
+      <div style="padding: 16px">
+
+        <form>
+
+          <ion-item>
+            <ion-label stacked><h4>Password</h4></ion-label>
+            <ion-input [(ngModel)]="register_form.password" name="password" type="password"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label stacked><h4>Password Confirmation</h4></ion-label>
+            <ion-input [(ngModel)]="register_form.c_password" type="password" name="c_password"></ion-input>
+          </ion-item>
+
+        </form>
+        <button ion-button block round (click)="register()" color="dark" style="margin-top:8px;" class="login-button">
+          <h4 style="color:white;padding-bottom:4px;">REGISTER</h4>
+        </button>
+
+        <button ion-button (click)="thirdSignUp()" color="dark" class="left-rnd-btn">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+
+
+      </div>
+    </ion-slide>
+
+
+
   </ion-slides>
 </ion-content>

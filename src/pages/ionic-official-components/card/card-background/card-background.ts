@@ -11,17 +11,17 @@ export class CardBackgroundPage {
     {
       imageUrl: 'assets/img/card/card-saopaolo.png',
       title: 'São Paulo',
-      subtitle: '41 Listings'
+      subtitle: '41 Recipes'
     },
-    {
+    { 
       imageUrl: 'assets/img/card/card-amsterdam.png',
       title: 'Amsterdam',
-      subtitle: '64 Listings'
+      subtitle: '64 Recipes'
     },
     {
       imageUrl: 'assets/img/card/card-sf.png',
       title: 'San Francisco',
-      subtitle: '72 Listings'
+      subtitle: '72 Recipes '
     },
     {
       imageUrl: 'assets/img/card/card-madison.png',

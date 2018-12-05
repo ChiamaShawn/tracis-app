@@ -15,11 +15,19 @@
 @import '../theme/animations';
 @import '../theme/dark.theme';
 @import '../theme/light.theme';
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,400');
 @font-face{
-  font-family: Raleway;
-  src: url('../assets/font/Raleway-Regular.ttf') format('ttf');
+  font-family: 'Montserrat';
+  src: url('../assets/fonts/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2');
   }
 
+  p,ion-item,h1,h2,h3,h4,h5,ion-title,ion-label,ion-title,b{
+    font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    text-align: justify;
+  }
+
+  
 .align-center {
   text-align: center;
 }
@@ -187,9 +195,7 @@
     background-color: map-get($colors, light);
     color: map-get($colors, primary);
   }
-  h1, h2, h3, h4, p {
-    font-family: 'Raleway'
-  }
+  
   ion-card {
     position: relative;
     text-align: center;

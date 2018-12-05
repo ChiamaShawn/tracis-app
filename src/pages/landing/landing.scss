@@ -1,7 +1,4 @@
-@font-face{
-  font-family: Raleway;
-  src: url('../assets/font/Raleway-Regular.ttf') format('ttf');
-  }
+
 page-landing {
     $base-color: rgb(24, 72, 90);
   // Fullscreen centered image background
@@ -30,6 +27,9 @@ page-landing {
     height: 100%;
   }
   // Content
+  ion-label{
+    color:#C00E2D;
+  }
   .scroll-content {
     display: flex;
     flex-direction: column;
@@ -53,16 +53,19 @@ page-landing {
   h3 {
     color: white;
   }
+  .label-md {
+    font-size:0.9em;
+  }
   // Input items
   ion-label,
   .input-has-focus {
-    color: #fff !important;
+    color: #000 !important;
   }
   ion-item {
     border-radius: 3px !important;
     padding-right: 16px !important;
     margin-bottom: 5px !important;
-    color: #fff !important;
+    color: #000 !important;
     background-color: transparent !important;
     font-size: 0.9em;
   }
@@ -70,10 +73,10 @@ page-landing {
     margin-bottom: 15px !important;
   }
    ::-webkit-input-placeholder {
-    color: white !important;
+    color: #C00E2D !important;
   }
   .item-inner {
-    border-bottom: 2px solid white !important;
+    border-bottom: 1px solid #C00E2D !important;
     box-shadow: none !important;
   }
   //
@@ -141,8 +144,6 @@ page-landing {
     bottom:0;
 
   }
-  h1, h2, h3, h4, p {
-    font-family: 'Raleway', sans-serif;
-  }
+
 
 }

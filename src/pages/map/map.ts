@@ -1,6 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
 import { Geolocation } from '@ionic-native/geolocation';
 /**
  * Generated class for the MapPage page.
@@ -8,8 +7,8 @@ import { Geolocation } from '@ionic-native/geolocation';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 declare var google;
+
 @IonicPage()
 @Component({
   selector: 'page-map',
@@ -18,13 +17,12 @@ declare var google;
 export class MapPage {
   @ViewChild('map') mapElement: ElementRef;
   map: any;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public geolocation: Geolocation) {
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private geolocation: Geolocation) {
   }
 
-
- 
-    ionViewDidLoad() {
-    console.log('ionViewDidLoad MapPage');
+  ionViewDidLoad() {
+    
     this.loadMap();
   }
   loadMap(){
@@ -36,9 +34,7 @@ export class MapPage {
       let mapOptions = {
         center: latLng,
         zoom: 15,
-        mapTypeId: google.maps.MapTypeId.ROADMAP,
-        fullscreenControl: false,
-        zoomControl: false
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       }
  
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
@@ -46,5 +42,11 @@ export class MapPage {
     }, (err) => {
       console.log(err);
     });
+
+  }
+ 
+  requestEvacuation(){
+    console.log('Evacuation Requested');
+    
   }
 }

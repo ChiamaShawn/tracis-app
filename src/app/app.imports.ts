@@ -24,12 +24,10 @@ import { Autosize } from '../components/autosize/autosize';
 // Modules
 import { SwingModule } from 'angular2-swing';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
 
 export const MODULES = [
   SwingModule,
   BrowserModule,
-  HttpClientModule,
 ];
 
 export const PROVIDERS = [

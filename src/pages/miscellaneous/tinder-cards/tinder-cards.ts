@@ -8,7 +8,6 @@ import {
   SwingCardComponent
 } from 'angular2-swing';
 import { NavController, IonicPage } from 'ionic-angular';
-import { HttpClient } from '@angular/common/http';
 
 @IonicPage()
 @Component({
@@ -23,7 +22,7 @@ export class TinderCardsPage {
   stackConfig: StackConfig;
   recentCard: string = '';
 
-  constructor(public navCtrl: NavController, public http: HttpClient, public toastCtrl: ToastService) {
+  constructor(public navCtrl: NavController, public toastCtrl: ToastService) {
     this.stackConfig = {
       throwOutConfidence: (offset, element: any) => {
         return Math.min(Math.abs(offset) / (element.offsetWidth / 2), 1);
@@ -44,7 +43,7 @@ export class TinderCardsPage {
     });
 
     this.cards = [{ email: '' }];
-    this.addNewCards(1);
+    // this.addNewCards(1);
   }
 
   // Called whenever we drag an element
@@ -67,7 +66,7 @@ export class TinderCardsPage {
   // Connected through HTML
   voteUp(like: boolean) {
     const removedCard = this.cards.pop();
-    this.addNewCards(1);
+    // this.addNewCards(1);
     if (like) {
       this.toastCtrl.create('You liked: ' + removedCard.email);
     } else {
@@ -76,14 +75,14 @@ export class TinderCardsPage {
   }
 
   // Add new cards to our array
-  addNewCards(count: number) {
-    this.http.get('https://randomuser.me/api/?results=' + count)
-      .subscribe((result: any) => {
-        for (const val of result.results) {
-          this.cards.push(val);
-        }
-      });
-  }
+  // addNewCards(count: number) {
+  //   this.http.get('https://randomuser.me/api/?results=' + count)
+  //     .subscribe((result: any) => {
+  //       for (const val of result.results) {
+  //         this.cards.push(val);
+  //       }
+  //     });
+  // }
 
   // http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
   decimalToHex(d, padding) {

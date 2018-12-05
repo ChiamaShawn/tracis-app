@@ -1,0 +1,92 @@
+<!--
+  Generated template for the UserProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+</ion-header>
+
+
+<ion-content padding>
+  <header class="header" role="banner">
+    <nav class="header__wrapper" role="navigation">
+      <ul class="header-icons">
+        <li class="header-item__mail">
+          <i class="fa fa-envelope-open-o" aria-hidden="true"></i>
+        </li>
+      </ul>
+    </nav>
+    <div class="header-item__img">
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/210284/93.jpg" />
+      <h2 style="padding-bottom:8px;">Policy Holder Name</h2>
+      <h3>Policy Type Placeholder</h3>
+    </div>
+  </header>
+  <main class="main" role="main">
+    <div class="main__wrapper">
+      <div class="icons">
+        <a>
+          <i class="fa fa-medkit" aria-hidden="true"></i>
+        </a>
+        <a (click)="openUserProfile()">
+          <i class="fa fa-user" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="heading">
+        <h3>Events</h3>
+      </div>
+      <div class="panel panel__padding events">
+        <div class="header-menu">
+          <div class="header-menu__item--left">Recent Events</div>
+          <div class="header-menu__item--right">
+            <a href="#">All Events</a>
+          </div>
+        </div>
+        <div class="events__content">
+          <div class="events__content--date">
+            <h2>23</h2>
+            <p>Dec</p>
+          </div>
+          <div class="events__timeline">
+            <span class="events__timeline--circle"></span>
+          </div>
+          <div class="events__content--events">
+            <h3 class="event-description">Nairobi Hospital</h3>
+            <h5 class="event-hour" style="padding:6px;">Ksh. 10,800</h5>
+          </div>
+        </div>
+        <div class="events__content">
+          <div class="events__content--date">
+            <h2>01</h2>
+            <p>Jan</p>
+          </div>
+          <div class="events__timeline">
+            <!-- events__timeline--line class not for first & last events panels -->
+            <span class="events__timeline--line"></span>
+            <span class="events__timeline--circle"></span>
+          </div>
+          <div class="events__content--events">
+            <h3 class="event-description">Mbagathi Hospital</h3>
+            <h5 class="event-hour">Ksh. 12,000</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer__menu" role="contentinfo">
+    <div>
+      <i class="fa fa-home" aria-hidden="true"></i>
+    </div>
+    <div>
+      <i class="fa fa-heart" aria-hidden="true"></i>
+    </div>
+    <div>
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+    </div>
+    <div>
+      <i class="fa fa-cog" aria-hidden="true"></i>
+    </div>
+  </footer>
+
+</ion-content>

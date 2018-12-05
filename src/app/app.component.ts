@@ -10,15 +10,16 @@ import { LandingPage } from '../pages/landing/landing';
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
+  rootPage = LandingPage;
   card = {
       imageUrl: 'assets/img/card/card-saopaolo.png',
       title: 'São Paulo',
       subtitle: '41 Listings'
     };
 
-  rootPage: any = LandingPage;
+  // rootPage: any = LandingPage;
   activePage = new Subject();
-
+  
   pages: Array<{ title: string, component: any, active: boolean, icon: string }>;
   routeList: Array<{ title: string, component: any, active: boolean, icon: string }>;
   rightMenuItems: Array<{ icon: string, active: boolean }>;

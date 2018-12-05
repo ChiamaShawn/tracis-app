@@ -4,41 +4,20 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
+<ion-header>
 
-<ion-header style="background:rgba(255,255,255,0)">
-    <button ion-button color="dark" style="height:40px;width:40px;position:fixed;top:0;left:0;margin:15px;" menuToggle>
-        <ion-icon name="menu" style="color:white" ></ion-icon>
-      </button>
+
+
 </ion-header>
- 
+
+
 <ion-content>
-  <div #map id="map"></div>  
-  <ion-row style="text-align:center;position:absolute;bottom:0;z-index:9999;width:100%;margin-bottom:16px;">
-    <ion-col>
-        <button ion-button color="dark" round style="width:95%;height:56px;text-align: center">
-          <h3>
-              <ion-icon name="medkit"></ion-icon> Request Evacuation
-          </h3>
-            
-      </button>
-    </ion-col>
-  </ion-row>
-  
+    <div #map id="map"></div> 
+   
+          <button ion-button round color="dark" class="login-button" style="position:fixed;bottom:50px;height:50px;width:95%;margin:16px" (click)="requestEvacuation()">
+            <h4 style="color:white;">
+              Request Evacuation
+            </h4>
+          </button>
+        
 </ion-content>
-<!-- <ion-footer style="height:70px">
-    <ion-grid>
-        <ion-row style="text-align:center;">
-          <ion-col style="padding-top:3px;border-right:solid 1px #000">
-            <h2><ion-icon name="medkit" style="color:blue;"></ion-icon>
-              
-            </h2>
-            
-          </ion-col>
-          <ion-col style="padding-top:3px;">
-            <h2> <ion-icon name="list" style="color:blue;"></ion-icon></h2>
-            
-          </ion-col>
-         
-        </ion-row>
-        </ion-grid>
-</ion-footer> -->

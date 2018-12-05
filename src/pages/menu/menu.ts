@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { MapPage } from '../map/map';
 import { EvacuationReviewPage } from '../evacuation-review/evacuation-review';
 import { TreatmentReviewPage } from '../treatment-review/treatment-review';
 
@@ -18,8 +17,6 @@ import { TreatmentReviewPage } from '../treatment-review/treatment-review';
   templateUrl: 'menu.html',
 })
 export class MenuPage {
-  rootPage: any = MapPage;
-  tab1Root: any = MapPage;
   tab2Root: any = EvacuationReviewPage;
   tab3Root: any = TreatmentReviewPage;
 
